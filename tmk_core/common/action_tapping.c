@@ -244,7 +244,7 @@ bool process_tapping(keyrecord_t *keyp) {
 #        endif
                         !tapping_key.tap.interrupted && tapping_key.tap.count > 0) {
                         // sequential tap.
-                        keyp->tap = tapping_key.tap;
+                        keyp->tapget_tapping_force_hold = tapping_key.tap;
                         if (keyp->tap.count < 15) keyp->tap.count += 1;
                         debug("Tapping: Tap press(");
                         debug_dec(keyp->tap.count);
