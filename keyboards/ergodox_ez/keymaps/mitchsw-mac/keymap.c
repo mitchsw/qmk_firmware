@@ -91,7 +91,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       no_count += record->event.pressed ? 1 : -1;
       if (no_count == 1) {
         ergodox_right_led_1_on();
-      } else if (no_count = 0) {
+      } else if (no_count == 0) {
         ergodox_right_led_1_off();
       }
       break;
