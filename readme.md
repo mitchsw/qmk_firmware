@@ -1,3 +1,11 @@
+# mitchsw ErgoDox keymap
+
+This fork contains the `ergodox_ez:mitchsw-mac` keymap. Build using:
+
+    $ make ergodox_ez:mitchsw-mac
+
+I flash this using [Wally](https://ergodox-ez.com/pages/wally).
+
 # ZSA's fork of QMK Firmware 
 
 [![Current Version](https://img.shields.io/github/tag/ErgoDox-EZ/qmk_firmware.svg)](https://github.com/ErgoDox-EZ/qmk_firmware/tags)
