@@ -45,18 +45,19 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty(
-    KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_PAUSE,                                       KC_INSERT,      KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           LCTL(LGUI(KC_Q)),
+    KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_6,                                           KC_7,           KC_8,           KC_9,           KC_0,           KC_INSERT,      KC_PAUSE,       LCTL(LGUI(KC_Q)),
     KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           KC_UNDS,                                        KC_PLUS,        KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_PSCREEN,
     KC_BSLASH,      KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                                                           KC_H,           KC_J,           KC_K,           KC_L,           KC_SCOLON,      KC_COLN,
     LSFT_T(KC_SLASH), KC_Z,         KC_X,           KC_C,           KC_V,           KC_B,           KC_MINUS,                                       KC_EQUAL,       KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_QUOTE,       KC_DQUO,
     KC_LALT,        KC_LCTRL,       LCTL(KC_LEFT),  LCTL(KC_RIGHT), KC_LGUI,                                                                                                        KC_LEFT,        KC_DOWN,        KC_UP,          KC_RIGHT,       KC_RCTRL,
                                                                                                     KC_SPACE,       KC_NO,          KC_NO,          RSFT_W_BLOCK,
                                                                                                                     KC_DELETE,      KC_DELETE,
-                                                                                    LSFT_W_BLOCK,   LT(1,KC_ENTER), KC_BSPACE,      KC_BSPACE,      LT(1,KC_ENTER), KC_SPACE
+                                                                                    LSFT_W_BLOCK,   MO(1),          KC_BSPACE,      KC_BSPACE,      LT(1,KC_ENTER), LT(3,KC_SPACE)
   ),
+  // Fn Layer
   [1] = LAYOUT_ergodox_pretty(
-    KC_NO,          KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,          KC_NO,                                          KC_NO,          KC_F6,          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,
-    KC_NO,          KC_NO,          KC_LCBR,        KC_RCBR,        KC_AMPR,        KC_AT,          KC_NO,                                          KC_NO,          KC_GRAVE,       KC_TILD,        KC_LABK,        KC_RABK,        KC_NO,          KC_F12,
+    KC_NO,          KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,          KC_F6,                                          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,         KC_F12,         KC_NO,
+    KC_NO,          KC_NO,          KC_LCBR,        KC_RCBR,        KC_AMPR,        KC_AT,          KC_NO,                                          KC_NO,          KC_GRAVE,       KC_TILD,        KC_LABK,        KC_RABK,        KC_NO,          KC_NO,
     KC_NO,          KC_NO,          KC_LPRN,        KC_RPRN,        KC_HASH,        KC_DLR,                                                                         KC_ASTR,        KC_PERC,        KC_LBRC,        KC_RBRC,        KC_NO,          KC_NO,         
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_CIRC,        KC_PIPE,        KC_NO,                                          KC_NO,          KC_EXLM,        KC_QUES,        KC_NO,          KC_NO,          KC_NO,          KC_NO,         
     WEBUSB_PAIR,    KC_NO,          LCTL(KC_DOWN),  LCTL(KC_UP),    KC_NO,                                                                                                          KC_HOME,        KC_PGDOWN,      KC_PGUP,        KC_END,         KC_NO,
@@ -64,6 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                                                                     KC_NO,          KC_NO,         
                                                                                     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO
   ),
+  // Shift Layer
   [2] = LAYOUT_ergodox_pretty(
     KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_NO,                                          KC_NO,          KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
@@ -73,6 +75,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                                                     KC_TRANSPARENT, KC_TRANSPARENT,
                                                                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
+  ),
+  // NumPad Layer
+  [2] = LAYOUT_ergodox_pretty(
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,         
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_7,           KC_8,           KC_9,           KC_NO,          KC_NO,         
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                                                          KC_NO,          KC_4,           KC_5,           KC_6,           KC_NO,          KC_NO,
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_1,           KC_2,           KC_3,           KC_NO,          KC_NO,
+    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                                                                                          KC_0,           KC_NO,          KC_NO,          KC_NO,          KC_NO,         
+                                                                                                    KC_NO,          KC_NO,          KC_NO,          KC_NO,         
+                                                                                                                    KC_NO,          KC_NO,         
+                                                                                    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO
   ),
 };
 
@@ -100,23 +113,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 uint32_t layer_state_set_user(uint32_t state) {
-  uint8_t layer = biton32(state);
   ergodox_board_led_off();
   // led_1 is owned by KC_NO blinking.
   //ergodox_right_led_1_off();
+  // No layer state lighting. It's distracting.
   ergodox_right_led_2_off();
   ergodox_right_led_3_off();
-  switch (layer) {
-    case 1:
-      // Experiment with no layer leds (distracting)
-      //ergodox_right_led_3_on();
-      break;
-    case 2:
-      //ergodox_right_led_2_on();
-      break;
-    default:
-      break;
-  }
   return state;
 };
 
